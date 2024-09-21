@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "406959951929",
+    "project_id": "goanywhere-ad4e6",
+    "storage_bucket": "goanywhere-ad4e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406959951929:android:31662946cbe8c15a323de8",
+        "android_client_info": {
+          "package_name": "com.calidhonia.GoAnyWhere"
+        }
+      },
+      "oauth_client": [],
+
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0kqY4ZCK_9Yqh_GCjjItXfBCSLQX5HE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406959951929:android:4a1103675db3cd9a323de8",
+        "android_client_info": {
+          "package_name": "com.calidhonia.goanywhere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0kqY4ZCK_9Yqh_GCjjItXfBCSLQX5HE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
