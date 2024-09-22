@@ -33,8 +33,10 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("com.google.firebase:firebase-auth:21.0.3")
 
-       // Firebase Authentication
+
+    // Firebase Authentication
     implementation("com.google.firebase:firebase-auth:22.1.1")
 
     // Test dependencies
