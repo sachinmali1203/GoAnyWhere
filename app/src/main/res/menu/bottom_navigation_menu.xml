@@ -1,0 +1,22 @@
+<!-- res/menu/bottom_nav_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search Rides" />
+
+    <item
+        android:id="@+id/ic_add"
+        android:icon="@drawable/ic_add"
+        android:title="Create Rides" />
+
+    <item
+        android:id="@+id/ic_your_rides"
+        android:icon="@drawable/ic_rides"
+        android:title="Your Rides" />
+
+    <item
+        android:id="@+id/ic_message"
+        android:icon="@drawable/ic_message"
+        android:title="Messages" />
+</menu>

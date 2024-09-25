@@ -8,4 +8,8 @@
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
     <color name="red">#FF0000</color>
+    <color name="primary">#6200EE</color> <!-- Use your primary color -->
+    <color name="text_primary">#000000</color> <!-- Text color -->
+    <color name="background_color">#F3F4F6</color> <!-- Light background color -->
+
 </resources>

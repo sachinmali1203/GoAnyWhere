@@ -1,5 +1,7 @@
 package com.calidhonia.goanywhere;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,30 +15,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.calidhonia.goanywhere.R;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
     private Button loginButton, registerButton;
     private FirebaseAuth mAuth;
+    private SharedPreferences sharedPreferences;
+    private static final String PREF_NAME = "MyAppPrefs";
+    private static final String IS_LOGGED_IN = "isLoggedIn";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
-        // Initialize Firebase Auth
+        // Initialize Firebase Auth and SharedPreferences
         mAuth = FirebaseAuth.getInstance();
+        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+
+        // Check if the user is already logged in
+        boolean isLoggedIn = sharedPreferences.getBoolean(IS_LOGGED_IN, false);
+        if (isLoggedIn) {
+            // If already logged in, redirect to MainActivity
+            redirectToMainActivity();
+            return;
+        }
+
+        setContentView(R.layout.activity_login);
 
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
@@ -83,12 +90,8 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Login successful
                             Log.d("LoginActivity", "Login successful, navigating to MainActivity");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            Log.d("LoginActivity", "Navigating to MainActivity");
-                            Log.d("MainActivity", "MainActivity Launched");
-                            finish(); // Optional: Close LoginActivity
+                            saveLoginState();  // Save login state
+                            redirectToMainActivity();  // Redirect to MainActivity
                         } else {
                             // If login fails, display a message to the user.
                             Log.w("LoginActivity", "Login failed", task.getException());
@@ -108,10 +111,8 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Registration successful
                             Log.d("LoginActivity", "User registered successfully, navigating to MainActivity");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish(); // Optional: Close LoginActivity
+                            saveLoginState();  // Save login state
+                            redirectToMainActivity();  // Redirect to MainActivity
                         } else {
                             // If registration fails, display a message to the user.
                             Log.w("LoginActivity", "Registration failed", task.getException());
@@ -120,5 +121,19 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    // Save login state to SharedPreferences
+    private void saveLoginState() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(IS_LOGGED_IN, true);  // Save that user is logged in
+        editor.apply();
+    }
+
+    // Redirect to MainActivity
+    private void redirectToMainActivity() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();  // Close LoginActivity
     }
 }

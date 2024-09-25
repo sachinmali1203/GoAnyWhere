@@ -11,22 +11,15 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS) // PREFER_SETTINGS will take care of managing all repositories
     repositories {
-        google()
-        mavenCentral()
+        google()         // Include Google's Maven repository
+        mavenCentral()   // Include Maven Central repository
     }
 }
 
 rootProject.name = "GoAnyWhere"
 include(":app")
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-

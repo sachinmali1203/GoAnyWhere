@@ -1,0 +1,8 @@
+<resources>
+    <string name="from_location_hint">From Location</string>
+    <string name="to_location_hint">To Location</string>
+    <string name="select_date_button">Select Date</string>
+    <string name="num_passengers_hint">Number of Passengers</string>
+    <string name="search_rides_button">Search Rides</string>
+    <string name="app_name">GoAnyWhere</string>
+</resources>

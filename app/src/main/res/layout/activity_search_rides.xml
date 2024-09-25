@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- From Location -->
+    <AutoCompleteTextView
+        android:id="@+id/from_location"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/from_location_hint"
+        android:inputType="text"
+        android:padding="8dp" />
+
+    <!-- To Location -->
+    <AutoCompleteTextView
+        android:id="@+id/to_location"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/to_location_hint"
+        android:inputType="text"
+        android:padding="8dp" />
+
+    <!-- Date Picker -->
+    <Button
+        android:id="@+id/select_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_date_button" />
+
+    <!-- Number of Passengers -->
+    <EditText
+        android:id="@+id/num_passengers"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/num_passengers_hint"
+        android:inputType="number"
+        android:padding="8dp" />
+
+    <!-- Search Rides Button -->
+    <Button
+        android:id="@+id/search_rides_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_rides_button" />
+
+</LinearLayout>
