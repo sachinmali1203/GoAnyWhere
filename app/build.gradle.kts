@@ -51,6 +51,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation ("com.google.maps.android:android-maps-utils:2.2.5")
+    implementation ("androidx.preference:preference:1.2.0")
+
 
 }
 

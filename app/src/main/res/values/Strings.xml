@@ -5,4 +5,37 @@
     <string name="num_passengers_hint">Number of Passengers</string>
     <string name="search_rides_button">Search Rides</string>
     <string name="app_name">GoAnyWhere</string>
+    <string name="welcome_text">Welcome to GoAnywhere</string>
+    <string name="get_started">Get Started</string>
+
+        <!-- Login Screen Texts -->
+        <string name="hint_username_email">Username or Email</string>
+        <string name="hint_password">Password</string>
+        <string name="button_login">Login</string>
+        <string name="forgot_password">Forgot password?</string>
+        <string name="dont_have_account">Don’t have an account?</string>
+        <string name="button_sign_up">Sign Up</string>
+        <string name="or_separator">OR</string>
+        <string name="sign_up_social">Sign up with social media network</string>
+
+
+        <!-- Drawer Menu Strings -->
+        <string name="menu_profile">Profile</string>
+        <string name="menu_change_password">Change Password</string>
+        <string name="menu_settings">Settings</string>
+        <string name="menu_logout">Logout</string>
+
+
+        <!-- Action Bar Drawer Toggle -->
+        <string name="navigation_drawer_open">Open drawer</string>
+        <string name="navigation_drawer_close">Close drawer</string>
+
+
+        <string name="nav_search_ride">Search Ride</string>
+        <string name="nav_create_ride">Create Ride</string>
+        <string name="nav_your_rides">Your Rides</string>
+        <string name="nav_messages">Messages</string>
+
+         <string name="profile_image_description">Profile Picture</string>
+
 </resources>

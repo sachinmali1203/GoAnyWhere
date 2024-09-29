@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.homepage.HomeActivity">
+
+    <!-- Main Content Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Homepage"
+            app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- Main Content with Map and Search Form -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="16dp">
+
+            <!-- MapView Placeholder -->
+            <FrameLayout
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@android:color/darker_gray" /> <!-- Replace with actual MapView -->
+
+            <!-- From Location Text Box -->
+            <EditText
+                android:id="@+id/fromLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="From Location"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_edit_text" />
+
+            <!-- To Location Text Box -->
+            <EditText
+                android:id="@+id/toLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="To Location"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edit_text" />
+
+            <!-- Date Selector -->
+            <EditText
+                android:id="@+id/dateSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Date"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edit_text" />
+
+            <!-- Search Ride Button -->
+            <Button
+                android:id="@+id/buttonSearchRide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search Ride"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <!-- Bottom Navigation View -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_nav_menu" />
+    </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

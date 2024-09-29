@@ -19,27 +19,26 @@
         android:theme="@style/Theme.GoAnyWhere"
         tools:targetApi="31">
 
-        <!-- Main Activity Declaration -->
+        <!-- Welcome Activity -->
         <activity
-            android:name=".LoginActivity"
-            android:exported="true">
+            android:name=".ui.auth.WelcomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GoAnyWhere.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
+        <!-- Login Activity -->
+        <activity android:name=".ui.auth.LoginActivity" />
 
-        <!-- Success Activity Declaration -->
+        <!-- Home Activity -->
         <activity
-            android:name=".SuccessActivity"
-            android:exported="false" />
+            android:name=".ui.homepage.HomeActivity"
+            android:theme="@style/Theme.GoAnyWhere" />
 
-        <!-- Error Activity Declaration -->
+        <!-- Error Activity -->
         <activity
             android:name=".ErrorActivity"
             android:exported="false" />
@@ -52,4 +51,3 @@
     </application>
 
 </manifest>
-
